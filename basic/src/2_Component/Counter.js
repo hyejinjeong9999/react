@@ -1,6 +1,6 @@
 import {Component} from "react";
 
-class Component_Counter extends Component {
+class Counter extends Component {
     /**
      *
      * 컴포넌트에 state를 설정할 때는 다음과 같이 constructor 메서드를 작성해서 설정한다
@@ -55,6 +55,25 @@ class Component_Counter extends Component {
                         //메서드를 두번사용하면 값이 변경되지 않는다
                         //this.setState를 사용할 때 객체 대신에 함수를 인자로 넣어주는 것이다
 
+                        this.setState(prevState => {
+                            return {
+                                number: prevState.number + 1
+                            };
+                        });
+
+                        //위 코드와 아래 코드는 완전히 똑같은 기능을 한다
+                        //아래 코드는 함수에서 바로 객체를 반환한다는 의미다
+                        //화살표 함수에서 바로 객체를 반환하도록 했기 때문에 prevState =>({})와 같은 형태로 이루어진다
+                        this.setState(prevState => ({
+                            number: prevState.number + 1
+                        }));
+                    }}
+                >
+                    +1
+                </button>
+
+                <button
+                    onClick={() => {
                         this.setState(
                             {
                                 number: number + 1
@@ -65,16 +84,8 @@ class Component_Counter extends Component {
                             }
                         )
                     }}
-
-                    //위 코드와 아래 코드는 완전히 똑같은 기능을 한다
-                    //아래 코드는 함수에서 바로 객체를 반환한다는 의미다
-                    //화살표 함수에서 바로 객체를 반환하도록 했기 때문에 prevState =>({})와 같은 형태로 이루어진다
-                    // this.setState(prevState => ({
-                    //     number: prevState.number + 1
-                    // })
-
                 >
-                    +1
+                    alert
                 </button>
             </div>
         )
@@ -82,4 +93,4 @@ class Component_Counter extends Component {
     }
 }
 
-export default Component_Counter;
+export default Counter;
