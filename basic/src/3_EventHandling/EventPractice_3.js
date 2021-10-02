@@ -16,6 +16,10 @@ class EventPractice_3 extends Component {
         username:'',
         message: ''}
 
+    /**
+     * 객체 안에서 key를 [] 로 감싸면 그 안에 넣은 레퍼런스가 가리키는 실제 값이 key 값으로 사용된다
+     *
+     */
     handleChange =(e)=> {
         this.setState({
             [e.target.name]: e.target.value
@@ -29,6 +33,21 @@ class EventPractice_3 extends Component {
             username:'',
             message: ''
         })
+    }
+
+    /**
+     *
+     * onKeyPress 이벤트 핸들링
+     *
+     * 키를 눌렀을때 발생하는 KeyPress 이벤트 처리 해보기
+     *
+     */
+
+    handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            this.handleClick()
+            ;
+        }
     }
 
     render() {
@@ -48,6 +67,7 @@ class EventPractice_3 extends Component {
                     placeholder={"아무거나 입력해보세용"}
                     value={this.state.message}
                     onChange={this.handleChange}
+                    onKeyPress={this.handleKeyPress}
                 />
 
                 <button onClick={this.handleClick}>
