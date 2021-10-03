@@ -6,8 +6,8 @@ import React from "react";
 // import EventPractice_2 from "./3_EventHandling/EventPractice_2";
 // import EventPractice_2_1 from "./3_EventHandling/EventPractice_2_1";
 // import EventPractice_3 from "./3_EventHandling/EventPractice_3";
-import EventPractice_4 from "./3_EventHandling/EventPractice_4";
-import EventPractice_4_1 from "./3_EventHandling/EventPractice_4_1";
+import EventPractice_4 from "./3_eventhandling/EventPractice_4";
+import EventPractice_4_1 from "./3_eventhandling/EventPractice_4_1";
 const App = () => {
     // return <MyComponent1/>;
     // return <MyComponent_Props name={"React"}/>;
