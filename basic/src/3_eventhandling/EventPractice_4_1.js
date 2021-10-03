@@ -1,4 +1,4 @@
-import React, {Component, useState} from "react";
+import React, {useState} from "react";
 
 /**
  * EventPractice3
@@ -14,28 +14,28 @@ import React, {Component, useState} from "react";
 
 const EventPractice_4_1 = () => {
 
-    const[form, setForm] = useState({
-        username:'',
-        message:''
+    const [form, setForm] = useState({
+        username: '',
+        message: ''
     });
 
-    const [username, message] = form
+    const {username, message}= form
 
-    const onChange = e =>{
+    const onChange = e => {
         const nextForm = {
             ...form, //기본의 form내용을 이 자리에 복사한 뒤
-            [e.target.form] : e.target.value //원하는 값을 덮어 씌운다
-        }
+            [e.target.name]: e.target.value //원하는 값을 덮어 씌운다
+        };
         setForm(nextForm)
     }
 
 
     const onClick = () => {
         alert(username + ': ' + message);
-       setForm({
-           username:'',
-           message:''
-       })
+        setForm({
+            username: '',
+            message: ''
+        })
     }
 
     const onKeyPress = e => {
