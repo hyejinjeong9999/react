@@ -9,8 +9,20 @@ import './ValidationSample.css'
  * 스크롤 박스 조작하기
  * canvas 요소에 그림 그릭
  *
- * 이때는 DOM에 직접적으로 접근해야되는데 이를 위해 ref를 사용한다다
-*/
+ * 이때는 DOM에 직접적으로 접근해야되는데 이를 위해 ref를 사용한다
+ *
+ *
+ * [ callback 함수 이용]
+ *
+ * ref를 달고자 하는 요소에 ref라는 콜백 함수를 props로 전달해준다
+ * 이 콜백 함수는 ref 값을 파라미터로 전달 받는다
+ * 함수 내부에서 파라미터로 받은 ref를 컴포넌트의 멤버 변수로 설정해 준다
+ *
+ * <input ref={(ref) => {this.input=ref}} />
+ * this.input은 input 요소의 DOM을 가리킨다
+ * ref 이름은 원하는 것으로 자유롭게 지정할 수 있다
+ */
+
 class ValidationSample extends Component{
     state={
         password:'',

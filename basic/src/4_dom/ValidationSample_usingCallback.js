@@ -2,8 +2,10 @@ import React, {Component} from "react";
 import './ValidationSample.css'
 
 /**
- * callback 함수 이용해서 작성하기
-*/
+ * 리액트에 내장되어 있는 createRef 함수 사용하기
+ * 리액트 16.3 부터 도입
+ * 적은코드로 쉽게 ref 설정 가능
+ */
 class ValidationSample extends Component{
     state={
         password:'',
