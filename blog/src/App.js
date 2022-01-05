@@ -6,10 +6,16 @@ import {useState} from "react";
 function App() {
 
     let [글제목, 글제목변경] = useState(['다첫번째글11', '가두번째 글22', '바세번째 글']);
-    let [number, setNumber] = useState(1);
+    let [number, setNumber] = useState([1,1,1]);
     let [modalSwitch, setModalSwitch] = useState(false);
     let [no, setNo] = useState(0);
     let [input, setInput] = useState("");
+
+    function addLike(i) {
+        let newArray = [...number]
+        newArray[i] = parseInt(number[i])+Number(1);
+        setNumber(newArray)
+    }
 
     function 제목바꾸기() {
         let newArray = [...글제목]
@@ -48,8 +54,9 @@ function App() {
                             setNo(i)
                         }}>
                             {a}
-                            <span onClick={() => setNumber(number + 1)}>
-                            👍{number}    </span>
+                            <span onClick={() => addLike(i)}>
+                            👍
+                                {number[i]}    </span>
 
 
                         </h3>
